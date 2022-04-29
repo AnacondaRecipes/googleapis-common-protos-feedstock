@@ -12,7 +12,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
+  # trigger 1
+   1skip: true  # [win and vc<14]
 
 requirements:
   build:
