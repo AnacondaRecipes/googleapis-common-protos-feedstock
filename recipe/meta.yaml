@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
 
 outputs:
@@ -27,7 +27,6 @@ outputs:
       run:
         - python
         - protobuf >=3.15.0,<5.0.0
-        - libprotobuf
       run_constrained:
         - grpcio >=1.0.0,<2.0.0
     test:
