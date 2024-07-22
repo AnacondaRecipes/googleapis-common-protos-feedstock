@@ -155,12 +155,11 @@ outputs:
       description: |
         This package installs {{ name }} as well as the additional
         dependency required to enable grpc support.
-      doc_url: https://github.com/googleapis/api-common-protos/blob/master/README.md
-      doc_source_url: https://github.com/googleapis/api-common-protos/blob/master/README.md
-      dev_url: https://github.com/googleapis/api-common-protos
+      doc_url: https://github.com/googleapis/python-api-common-protos/blob/main/README.rst
+      dev_url: https://github.com/googleapis/python-api-common-protos
 
 about:
-  home: https://github.com/googleapis/api-common-protos
+  home: https://github.com/googleapis/python-api-common-protos
   license: Apache-2.0
   license_file: LICENSE
   license_family: APACHE
@@ -173,8 +172,8 @@ about:
     with open source tools to generate client libraries, documentation,
     and other artifacts. NOTE: to enable gRPC support, the grcpio package must
     also be installed. The {{ name }}-grpc metapackage accomplishes this.
-  doc_url: https://github.com/googleapis/googleapis/blob/master/README.md
-  dev_url: https://github.com/googleapis/googleapis
+  doc_url: https://github.com/googleapis/python-api-common-protos/blob/main/README.rst
+  dev_url: https://github.com/googleapis/python-api-common-protos
 
 extra:
   recipe-maintainers:
