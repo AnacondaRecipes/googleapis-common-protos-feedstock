@@ -1,14 +1,14 @@
-{% set sha256 = "27c5abdffc4911f28101e635de1533fb4cfd2c37fbaa9174587c799fac90aa87" %}
-{% set version = "1.63.2" %}
+{% set version = "1.69.2" %}
 {% set name = "googleapis-common-protos" %}
+{% set name_underscore = name.replace("-", "_") %}
 
 package:
   name: {{ name|lower }}-feedstock
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name_underscore }}/{{ name_underscore }}-{{ version }}.tar.gz
+  sha256: 3e1b904a27a33c821b4b749fd31d334c0c9c30e6113023d495e48979a3dc9c5f
 
 build:
   number: 0
@@ -26,7 +26,7 @@ outputs:
         - wheel
       run:
         - python
-        - protobuf >=3.20.2,<6.0.0.dev0,!=3.20.0,!=3.20.1,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5
+        - protobuf >=3.20.2,<7.0.0,!=4.21.1,!= 4.21.2,!=4.21.3,!=4.21.4,!=4.21.5
       run_constrained:
         - grpcio >=1.44.0,<2.0.0.dev0
     test:
@@ -147,7 +147,7 @@ outputs:
         - google.type.quaternion_pb2
         - google.type.timeofday_pb2
     about:
-      home: https://github.com/googleapis/api-common-protos
+      home: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos
       license: Apache-2.0
       license_file: LICENSE
       license_family: APACHE
@@ -155,11 +155,11 @@ outputs:
       description: |
         This package installs {{ name }} as well as the additional
         dependency required to enable grpc support.
-      doc_url: https://github.com/googleapis/python-api-common-protos/blob/main/README.rst
-      dev_url: https://github.com/googleapis/python-api-common-protos
+      doc_url: https://github.com/googleapis/google-cloud-python/blob/main/packages/googleapis-common-protos/README.rst
+      dev_url: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos
 
 about:
-  home: https://github.com/googleapis/python-api-common-protos
+  home: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos
   license: Apache-2.0
   license_file: LICENSE
   license_family: APACHE
@@ -172,8 +172,8 @@ about:
     with open source tools to generate client libraries, documentation,
     and other artifacts. NOTE: to enable gRPC support, the grcpio package must
     also be installed. The {{ name }}-grpc metapackage accomplishes this.
-  doc_url: https://github.com/googleapis/python-api-common-protos/blob/main/README.rst
-  dev_url: https://github.com/googleapis/python-api-common-protos
+  doc_url: https://github.com/googleapis/google-cloud-python/blob/main/packages/googleapis-common-protos/README.rst
+  dev_url: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos
 
 extra:
   recipe-maintainers:
