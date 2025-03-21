@@ -13,6 +13,7 @@ source:
 build:
   number: 0
   skip: true  # [py<37]
+  skip: true  # [linux and s390x]
 
 outputs:
   - name: {{ name }}
@@ -181,3 +182,8 @@ extra:
     - leahecole
     - parthea
     - tswast
+  skip-lints:
+    - missing_python_build_tool
+    - missing_pip_check
+    - missing_wheel
+    - wrong_output_script_key
