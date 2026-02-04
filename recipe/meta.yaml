@@ -1,4 +1,4 @@
-{% set version = "1.69.2" %}
+{% set version = "1.72.0" %}
 {% set name = "googleapis-common-protos" %}
 {% set name_underscore = name.replace("-", "_") %}
 
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name_underscore }}/{{ name_underscore }}-{{ version }}.tar.gz
-  sha256: 3e1b904a27a33c821b4b749fd31d334c0c9c30e6113023d495e48979a3dc9c5f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name_underscore }}/{{ name_underscore }}-{{ version }}.tar.gz
+  sha256: e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5
 
 build:
   number: 0
@@ -29,7 +29,7 @@ outputs:
         - python
         - protobuf >=3.20.2,<7.0.0,!=4.21.1,!= 4.21.2,!=4.21.3,!=4.21.4,!=4.21.5
       run_constrained:
-        - grpcio >=1.44.0,<2.0.0.dev0
+        - grpcio >=1.44.0,<2.0.0
     test:
       requires:
         - pip
@@ -93,7 +93,7 @@ outputs:
       run:
         - python
         - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
-        - grpcio >=1.44.0,<2.0.0.dev0
+        - grpcio >=1.44.0,<2.0.0
     test:
       imports:
         - google.api
