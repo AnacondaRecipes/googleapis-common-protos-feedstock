@@ -2,3 +2,6 @@ anaconda_config_version: 1
 upstream_sources:
   - pypi:
       identifier: googleapis-common-protos
+    packages:
+      - googleapis-common-protos
+      - googleapis-common-protos-grpc
