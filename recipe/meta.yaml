@@ -1,9 +1,9 @@
-{% set version = "1.75.3" %}
 {% set name = "googleapis-common-protos" %}
-{% set name_underscore = name.replace("-", "_") %}
+{% set name_underscore = name.replace('-', '_') %}
+{% set version = "1.75.3" %}
 
 package:
-  name: {{ name|lower }}-feedstock
+  name: {{ name }}-feedstock
   version: {{ version }}
 
 source:
@@ -12,9 +12,10 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<37]
-  skip: true  # [linux and s390x]
+  skip: true  # [py<310]
 
+
+# Upstream source: https://github.com/googleapis/google-cloud-python/blob/googleapis-common-protos-v1.75.3/packages/googleapis-common-protos/pyproject.toml
 outputs:
   - name: {{ name }}
     build:
@@ -31,10 +32,14 @@ outputs:
       run_constrained:
         - grpcio >={{ libgrpc }}.0,<2.0.0
     test:
+      source_files:
+        - tests
       requires:
         - pip
+        - pytest
       commands:
         - pip check
+        - pytest -vvv tests
       imports:
         - google.api
         - google.api.annotations_pb2
@@ -185,5 +190,4 @@ extra:
   skip-lints:
     - missing_python_build_tool
     - missing_pip_check
-    - missing_wheel
     - wrong_output_script_key
