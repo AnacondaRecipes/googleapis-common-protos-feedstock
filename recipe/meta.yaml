@@ -191,3 +191,4 @@ extra:
     - missing_python_build_tool
     - missing_pip_check
     - wrong_output_script_key
+    - reachable_url
