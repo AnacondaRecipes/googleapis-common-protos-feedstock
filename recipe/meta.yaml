@@ -1,6 +1,6 @@
 {% set name = "googleapis-common-protos" %}
 {% set name_underscore = name.replace('-', '_') %}
-{% set version = "1.75.3" %}
+{% set version = "1.75.5" %}
 
 package:
   name: {{ name }}-feedstock
@@ -15,7 +15,7 @@ build:
   skip: true  # [py<310]
 
 
-# Upstream source: https://github.com/googleapis/google-cloud-python/blob/googleapis-common-protos-v1.75.3/packages/googleapis-common-protos/pyproject.toml
+# Upstream source: https://github.com/googleapis/google-cloud-python/blob/googleapis-common-protos-v1.75.5/packages/googleapis-common-protos/pyproject.toml
 outputs:
   - name: {{ name }}
     build:
