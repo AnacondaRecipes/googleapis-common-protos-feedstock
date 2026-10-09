@@ -37,9 +37,10 @@ outputs:
       requires:
         - pip
         - pytest
+        - grpcio >={{ libgrpc }}.0,<2.0.0
       commands:
         - pip check
-        - pytest -vvv tests
+        - pytest -vv tests
       imports:
         - google.api
         - google.api.annotations_pb2
